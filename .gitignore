@@ -2,6 +2,10 @@
 mlruns/
 mlflow.log
 
+# Logs de ejecucion
+run.log
+nohup.out
+
 # Artefactos de entrenamiento
 modelos_mnist/
 *.keras
