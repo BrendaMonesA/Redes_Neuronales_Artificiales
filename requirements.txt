@@ -2,6 +2,7 @@ tensorflow
 optuna
 mlflow
 dagshub
+python-dotenv
 numpy
 pandas
 matplotlib

@@ -7,24 +7,36 @@ Cada tarea vive en su propia carpeta `Tarea_XX_...`.
 
 | # | Carpeta | Descripción |
 |---|---------|-------------|
-| 01 | `Tarea_01_MNIST_Densa_Optuna_Regularizacion` | Red densa (MNIST): búsqueda de arquitectura con Optuna (sin regularización), registro en MLflow, y comparación de regularizaciones L1, L2, L1-L2, Dropout y Dropout+L1-L2. |
+| 01 | `Tarea_01_MNIST_Densa_Optuna_Regularizacion` | Red densa (MNIST): búsqueda de arquitectura con Optuna (sin regularización) + comparación de regularizaciones L1, L2, L1-L2, Dropout y Dropout+L1-L2. Registro en MLflow (DagsHub). |
 
-## Seguimiento de experimentos (MLflow + DagsHub)
-
-Los experimentos se registran en **MLflow**. Para tener un enlace público donde ver
-las gráficas se usa **DagsHub** como servidor MLflow remoto:
-
-```
-https://dagshub.com/<TU_USUARIO>/Redes_Neuronales_Artificiales/experiments
-```
-
-## Instalación
+## Requisitos
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Uso
+## Configurar el token de DagsHub (MLflow)
 
-Abre el notebook de la tarea (Colab o local), configura tu token de DagsHub en la
-celda 5 y ejecuta todas las celdas.
+El token **no se guarda en el repositorio**. Se lee desde un archivo `.env` local
+(incluido en `.gitignore`).
+
+1. Copia `Tarea_01_.../.env.example` como `.env` en la misma carpeta.
+2. Pega tu token real:
+   ```
+   DAGSHUB_TOKEN=tu_token_de_dagshub
+   ```
+
+Si no configuras el token, el script registra en MLflow local (`./mlruns`).
+
+## Ejecutar la Tarea 01
+
+```bash
+cd Tarea_01_MNIST_Densa_Optuna_Regularizacion
+python mnist_densa_optuna_regularizacion.py
+```
+
+Genera:
+- `resultados_regularizacion.csv`, `optuna_trials.csv`
+- Figuras en `figuras/`
+- Modelos en `modelos_mnist/`
+- Runs en MLflow: `https://dagshub.com/BrendaMonesA/Redes_Neuronales_Artificiales/experiments`
