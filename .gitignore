@@ -1,0 +1,21 @@
+# MLflow local
+mlruns/
+mlflow.log
+
+# Artefactos de entrenamiento
+modelos_mnist/
+*.keras
+*.h5
+*.csv
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# Secretos (NUNCA subir tokens)
+.env
+*token*

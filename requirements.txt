@@ -1,0 +1,7 @@
+tensorflow
+optuna
+mlflow
+dagshub
+numpy
+pandas
+matplotlib
