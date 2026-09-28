@@ -6,3 +6,5 @@ python-dotenv
 numpy
 pandas
 matplotlib
+tensorflow-datasets
+scikit-learn

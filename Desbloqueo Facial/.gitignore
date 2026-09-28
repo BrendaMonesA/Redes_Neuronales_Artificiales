@@ -1,0 +1,5 @@
+# Fotos personales y CelebA (~1.4 GB): no se versionan
+datos/
+
+# Modelos entrenados
+modelos/
